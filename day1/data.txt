@@ -31,4 +31,8 @@ directives
 ()--- event binding
 *---- structural directive
 
+[()] - two way data binding
+@angular/forms ---form module
+
+Dependency injection 
 
