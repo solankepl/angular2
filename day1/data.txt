@@ -1,0 +1,19 @@
+pavan_solanke
+
+Logincomponent
+Model : username password
+Controllers? authenticate();
+view: form with input and submit button.
+
+What is component?
+Component is simple js class.
+- Class 
+	-propertise
+	-method
+- View
+ 
+-welcome is part of appmodule
+
+annotation :
+@ngmodule
+@component
