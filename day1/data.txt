@@ -34,5 +34,23 @@ directives
 [()] - two way data binding
 @angular/forms ---form module
 
-Dependency injection 
+Dependency injection
+@injectable services 
+
+service  is simple js class
+@injectable
+
+usecase: services --- comman utitlies, common data, common fucntions,
+not visbale on page
+example- validation function, sorting fun, global data, ajax call
+componets shold never be tied to data
+
+first call constructer and then call oninit
+always call service in OnInit  
+we need product list entire application then we need add app.module 
+   
+ 
+
+
+ 
 

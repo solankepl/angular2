@@ -10,30 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var products_service_1 = require("./products.service");
-var ProductComponent = (function () {
-    function ProductComponent(productservice) {
+var MobileProductComponent = (function () {
+    function MobileProductComponent(productservice) {
         this.productservice = productservice;
         //this.productList = productservice.getProducts();
     }
-    ProductComponent.prototype.delete = function (index) {
-        this.productList.splice(index, 1);
-    };
-    ProductComponent.prototype.validate = function () {
-        console.log("dasasd");
-    };
-    ProductComponent.prototype.ngOnInit = function () {
-        //invoke the service call here 
+    MobileProductComponent.prototype.ngOnint = function () {
         this.productList = this.productservice.getProducts();
     };
-    return ProductComponent;
+    return MobileProductComponent;
 }());
-ProductComponent = __decorate([
+MobileProductComponent = __decorate([
     core_1.Component({
-        selector: 'products',
-        template: "<ul> \n        <li *ngFor = \"let product of productList; let i=index\">\n            {{name.value}}\n            <input type=\"text\" #name (keypress) = \"validate(name.value)\" /> \n\n            {{product.name}}  \n            <button (click) = \"delete(i)\">delete</button>\n        </li>\n    </ul>\n    <mobile-products></mobile-products>\n    ",
-        providers: [products_service_1.ProductsService]
+        selector: 'mobile-products',
+        template: "<h2>List</h2>\n    "
     }),
     __metadata("design:paramtypes", [products_service_1.ProductsService])
-], ProductComponent);
-exports.ProductComponent = ProductComponent;
-//# sourceMappingURL=product.component.js.map
+], MobileProductComponent);
+exports.MobileProductComponent = MobileProductComponent;
+//# sourceMappingURL=mobileproduct.component.js.map

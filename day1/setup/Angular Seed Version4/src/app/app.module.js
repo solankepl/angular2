@@ -12,6 +12,7 @@ var welcome_component_1 = require("./welcome.component");
 var product_component_1 = require("./product.component");
 var login_component_1 = require("./login.component");
 var forms_1 = require("@angular/forms");
+var mobileproduct_component_1 = require("./mobileproduct.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,7 +21,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, product_component_1.ProductComponent, login_component_1.LoginComponent],
+        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, product_component_1.ProductComponent, login_component_1.LoginComponent, mobileproduct_component_1.MobileProductComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

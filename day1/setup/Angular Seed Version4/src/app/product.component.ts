@@ -1,5 +1,6 @@
 import {Product} from './product';
-import {Component} from '@angular/core'; 
+import {Component, OnInit} from '@angular/core'; 
+import {ProductsService} from './products.service'; 
 
 @Component({
     selector : 'products',
@@ -11,16 +12,17 @@ import {Component} from '@angular/core';
             {{product.name}}  
             <button (click) = "delete(i)">delete</button>
         </li>
-    </ul>`    
+    </ul>
+    <mobile-products></mobile-products>
+    `,
+    providers:[ProductsService]    
 })
 
-export class ProductComponent{
-    productList:Product[] = new Array<Product>();
-    constructor(){
-        let p1 =  new Product(2, "bag", 50);
-        let p2 =  new Product(2, "mobile", 50);
-        this.productList.push(p1);
-        this.productList.push(p2);
+export class ProductComponent implements onInit{
+    productList:Product[];
+    
+    constructor(private productservice:ProductsService) {
+        //this.productList = productservice.getProducts();
     } 
 
     delete(index:number):void{
@@ -29,6 +31,11 @@ export class ProductComponent{
 
     validate():void{
         console.log("dasasd");    
+    }
+    
+    ngOnInit(){
+        //invoke the service call here 
+        this.productList =  this.productservice.getProducts();
     }
 
 }
