@@ -5,6 +5,11 @@ Model : username password
 Controllers? authenticate();
 view: form with input and submit button.
 
+pakage.json ---? dependencies
+system.js.config.js---? set path for modulae loading
+index.html  ---? shell page
+main.ts --?? bootstrape the application 
+
 What is component?
 Component is simple js class.
 - Class 
@@ -17,3 +22,13 @@ Component is simple js class.
 annotation :
 @ngmodule
 @component
+
+directives
+- *ngfor
+- *-ngif
+
+[]--- property binding
+()--- event binding
+*---- structural directive
+
+

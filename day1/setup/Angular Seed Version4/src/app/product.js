@@ -1,15 +1,11 @@
 "use strict";
-var default_1 = (function () {
-    function default_1() {
+var Product = (function () {
+    function Product(id, productName, quantity) {
+        this.id = id;
+        this.productName = productName;
+        this.quantity = quantity;
     }
-    return default_1;
+    return Product;
 }());
-{
-    id: number;
-    productName: string;
-    quantity: number;
-    constructor();
-    {
-    }
-}
+exports.Product = Product;
 //# sourceMappingURL=product.js.map

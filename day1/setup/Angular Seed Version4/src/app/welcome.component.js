@@ -19,7 +19,7 @@ WelcomeComponent = __decorate([
     core_1.Component({
         selector: 'welcome',
         template: '<h1> {{message}}</h1>',
-        styles: ["\n        h1{\n            color:red;\n        }    \n    "]
+        styles: [" \n    h1{\n            color:red;\n        }    \n    "]
     }),
     __metadata("design:paramtypes", [])
 ], WelcomeComponent);

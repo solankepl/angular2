@@ -9,20 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var product_1 = require("./product");
+var core_1 = require("@angular/core");
 var ProductComponent = (function () {
     function ProductComponent() {
-        this.productList = new ArrayProduct();
+        this.productList = new Array();
         var p1 = new product_1.Product(2, "bag", 50);
         var p2 = new product_1.Product(2, "mobile", 50);
         this.productList.push(p1);
         this.productList.push(p2);
     }
+    ProductComponent.prototype.delete = function (index) {
+        this.productList.splice(index, 1);
+    };
+    ProductComponent.prototype.validate = function () {
+        console.log("dasasd");
+    };
     return ProductComponent;
 }());
 ProductComponent = __decorate([
-    Component({
+    core_1.Component({
         selector: 'products',
-        template: "<ul> \n        <li *ngFor = \"let product of productList\">{{product.name}}</li>\n    </ul>"
+        template: "<ul> \n        <li *ngFor = \"let product of productList; let i=index\">\n            {{name.value}}\n            <input type=\"text\" #name (keypress) = \"validate(name.value)\" /> \n\n            {{product.name}}  \n            <button (click) = \"delete(i)\">delete</button>\n        </li>\n    </ul>"
     }),
     __metadata("design:paramtypes", [])
 ], ProductComponent);
