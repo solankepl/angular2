@@ -11,9 +11,11 @@ import { MobileProductComponent }  from './mobileproduct.component';
 import { ParentComponent }  from './parent.component';
 import { Child1Component }  from './child1.component';
 import { Child2Component }  from './child2.component';
+import {SignUpFormComponent} from './signupform.component';
+import {MenuComponent} from './menu.component';
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, WelcomeComponent, ProductComponent, LoginComponent, MobileProductComponent, ParentComponent, Child1Component, Child2Component],
+  declarations: [ AppComponent, WelcomeComponent, ProductComponent, LoginComponent, MobileProductComponent, ParentComponent, Child1Component, Child2Component, SignUpFormComponent, MenuComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

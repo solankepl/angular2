@@ -6,17 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Angular';
+var MenuComponent = (function () {
+    function MenuComponent() {
+        this.menuItems = ["Home", "welcome", "photo"];
     }
-    return AppComponent;
+    return MenuComponent;
 }());
-AppComponent = __decorate([
+MenuComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "<h1>Hello {{name}}</h1> \n    <menu></menu>\n    <userform class=\"red\" ></userform>\n   <welcome></welcome> <products></products> <login></login> <parent></parent>   \n  ",
+        selector: 'menu',
+        template: "\n        <ul class=\"nav nav-tabs\">\n            <li *ngFor=\"let item of menuItems\" [class]=\"active\"><a href=\"#\">{{item}}</a></li>\n        </ul>\n    "
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], MenuComponent);
+exports.MenuComponent = MenuComponent;
+//# sourceMappingURL=menu.component.js.map

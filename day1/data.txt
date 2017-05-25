@@ -50,6 +50,15 @@ always call service in OnInit
 we need product list entire application then we need add app.module 
    
  
+Inter - Component intraction 
+@input() 
+ParentComponent
+Child1Component
+Child2Component
+
+subscribe(); unsubscribe(); notify();
+
+// template driven form 
 
 
  

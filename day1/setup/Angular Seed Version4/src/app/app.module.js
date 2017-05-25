@@ -16,6 +16,8 @@ var mobileproduct_component_1 = require("./mobileproduct.component");
 var parent_component_1 = require("./parent.component");
 var child1_component_1 = require("./child1.component");
 var child2_component_1 = require("./child2.component");
+var signupform_component_1 = require("./signupform.component");
+var menu_component_1 = require("./menu.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,7 +26,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, product_component_1.ProductComponent, login_component_1.LoginComponent, mobileproduct_component_1.MobileProductComponent, parent_component_1.ParentComponent, child1_component_1.Child1Component, child2_component_1.Child2Component],
+        declarations: [app_component_1.AppComponent, welcome_component_1.WelcomeComponent, product_component_1.ProductComponent, login_component_1.LoginComponent, mobileproduct_component_1.MobileProductComponent, parent_component_1.ParentComponent, child1_component_1.Child1Component, child2_component_1.Child2Component, signupform_component_1.SignUpFormComponent, menu_component_1.MenuComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
