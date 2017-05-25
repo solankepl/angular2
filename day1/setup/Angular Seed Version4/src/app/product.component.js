@@ -30,7 +30,7 @@ var ProductComponent = (function () {
 ProductComponent = __decorate([
     core_1.Component({
         selector: 'products',
-        template: "<ul> \n        <li *ngFor = \"let product of productList; let i=index\">\n            {{name.value}}\n            <input type=\"text\" #name (keypress) = \"validate(name.value)\" /> \n\n            {{product.productName}}  \n            <button (click) = \"delete(i)\">delete</button>\n        </li>\n    </ul>\n    <mobile-products></mobile-products>\n    ",
+        template: "<ul> \n        <li *ngFor = \"let product of productList; let i=index\">\n            {{name.value}}\n            <input type=\"text\" #name (keypress) = \"validate(name.value)\" /> \n\n            {{product.productName}}  \n            <button (click) = \"delete(i)\">delete</button>\n        </li>\n    </ul>\n    <mobile-products></mobile-products>    \n    ",
         providers: [products_service_1.ProductsService]
     }),
     __metadata("design:paramtypes", [products_service_1.ProductsService])

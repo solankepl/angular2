@@ -17,8 +17,5 @@ export class LoginComponent{
     constructor(){
         this.user ={name:'Admin', password:'admin'}
     }
-    ngOnint(){
-
-    }
 
 }

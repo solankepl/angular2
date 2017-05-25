@@ -13,7 +13,7 @@ import {ProductsService} from './products.service';
             <button (click) = "delete(i)">delete</button>
         </li>
     </ul>
-    <mobile-products></mobile-products>
+    <mobile-products></mobile-products>    
     `,
     providers:[ProductsService]    
 })

@@ -9,18 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var LoginComponent = (function () {
-    function LoginComponent() {
-        this.user = { name: 'Admin', password: 'admin' };
+var message_service_1 = require("./message.service");
+var ParentComponent = (function () {
+    function ParentComponent(messageService) {
+        this.messageService = messageService;
+        this.username = "kim";
     }
-    return LoginComponent;
+    ParentComponent.prototype.ngOnInit = function () {
+    };
+    return ParentComponent;
 }());
-LoginComponent = __decorate([
+ParentComponent = __decorate([
     core_1.Component({
-        selector: 'login',
-        template: "\n        USer Name <input type=\"text\" #uname [(ngModel)] = \"user.name\"/> <br>\n        Password <input type=\"password\" [(ngModel)] = \"user.password\" /> <br>\n        <button>login</button> <br>\n        user name in class:{{user.name}} <br>\n        new name : {{uname.value}}\n    ",
+        selector: 'parent',
+        template: "<h2>parent Component {{username}}</h2>\n                <child-1 [name] = \"username\"></child-1>\n                <child-2></child-2>\n\n    ",
+        providers: [message_service_1.MessageService]
     }),
-    __metadata("design:paramtypes", [])
-], LoginComponent);
-exports.LoginComponent = LoginComponent;
-//# sourceMappingURL=login.component.js.map
+    __metadata("design:paramtypes", [message_service_1.MessageService])
+], ParentComponent);
+exports.ParentComponent = ParentComponent;
+//# sourceMappingURL=parent.component.js.map

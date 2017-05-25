@@ -9,18 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var LoginComponent = (function () {
-    function LoginComponent() {
-        this.user = { name: 'Admin', password: 'admin' };
+var Subject_1 = require("rxjs/Subject");
+var MessageService = (function () {
+    function MessageService() {
+        this.subj = new Subject_1.Subject();
     }
-    return LoginComponent;
+    MessageService.prototype.sendMsg = function (msg) {
+        this.subj.next(msg);
+    };
+    MessageService.prototype.getMsg = function () {
+        return this.subj.asObservable();
+    };
+    return MessageService;
 }());
-LoginComponent = __decorate([
-    core_1.Component({
-        selector: 'login',
-        template: "\n        USer Name <input type=\"text\" #uname [(ngModel)] = \"user.name\"/> <br>\n        Password <input type=\"password\" [(ngModel)] = \"user.password\" /> <br>\n        <button>login</button> <br>\n        user name in class:{{user.name}} <br>\n        new name : {{uname.value}}\n    ",
-    }),
+MessageService = __decorate([
+    core_1.Injectable(),
     __metadata("design:paramtypes", [])
-], LoginComponent);
-exports.LoginComponent = LoginComponent;
-//# sourceMappingURL=login.component.js.map
+], MessageService);
+exports.MessageService = MessageService;
+//# sourceMappingURL=message.service.js.map
