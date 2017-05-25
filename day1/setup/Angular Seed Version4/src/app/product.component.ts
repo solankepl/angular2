@@ -9,7 +9,7 @@ import {ProductsService} from './products.service';
             {{name.value}}
             <input type="text" #name (keypress) = "validate(name.value)" /> 
 
-            {{product.name}}  
+            {{product.productName}}  
             <button (click) = "delete(i)">delete</button>
         </li>
     </ul>

@@ -19,6 +19,7 @@ var ProductsService = (function () {
         this.productList.push(p2);
     }
     ProductsService.prototype.getProducts = function () {
+        console.log(this.productList);
         return this.productList;
     };
     return ProductsService;
