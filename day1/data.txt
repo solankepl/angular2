@@ -1,4 +1,5 @@
-pavan_solanke
+sample data for testing json "https://jsonplaceholder.typicode.com/photos"
+http://blog.dustinnation.com/getting-generated-routes-to-work-in-angular-cli/
 
 Logincomponent
 Model : username password
@@ -59,6 +60,23 @@ Child2Component
 subscribe(); unsubscribe(); notify();
 
 // template driven form 
+
+routing
+Load the containt dynamically into the cell page
+activateRoute
+children
+route programatically
+router services navigate() 
+ 
+Http calls
+Promises - feacth data asc way. it wait until entire data is return back. not cancellable 
+Observable - whrn the data is very large. it strems the data.
+search example  
+Observable  they can be cancel
+
+@angular/http
+
+http server method get, put, post, delelte
 
 
  
