@@ -82,6 +82,10 @@ Custom Pipes
 @pipe()-- @angular/core
 componet and pipe are decrelred in app.module. services are not nedded to diclare 
 
+building process
+bs-config and ts.config
+
+
 
 
  
