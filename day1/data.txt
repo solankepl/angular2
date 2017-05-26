@@ -78,6 +78,11 @@ Observable  they can be cancel
 
 http server method get, put, post, delelte
 
+Custom Pipes
+@pipe()-- @angular/core
+componet and pipe are decrelred in app.module. services are not nedded to diclare 
+
+
 
  
 
