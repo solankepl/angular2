@@ -1,0 +1,20 @@
+<form novalidate #userform="ngForm" (ngSubmit)="postForm(userform.value)">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Enter Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" #name="ngModel" [(ngModel)]="user.name" name="name" required>
+    <p *ngIf="name.invalid && name.dirty">Username is mandatory </p>
+  </div>
+   
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Enter contact number</label>
+    <input type="text" class="form-control" name="contact" #contactnum="ngModel" id="formGroupExampleInput2" [(ngModel)]="user.phone" minlength="5" maxlength="10" required >
+    <p *ngIf="contactnum.errors?.required">Contact is Mandatory </p>
+    <p *ngIf="contactnum.errors?.minlength">Contact has to be atleast 5 characters </p>
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput3">Enter Address</label>
+    <input type="text" class="form-control" name="address" [(ngModel)]="user.address" id="formGroupExampleInput3" >
+  </div>
+  <button type="submit" [disabled]="userform.invalid" class="btn btn-primary">Submit</button>
+</form>
