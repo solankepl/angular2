@@ -1,5 +1,7 @@
 sample data for testing json "https://jsonplaceholder.typicode.com/photos"
 http://blog.dustinnation.com/getting-generated-routes-to-work-in-angular-cli/
+https://app.netlify.com/start/repos/solankepl/htmldrive-examples
+
 
 Logincomponent
 Model : username password
