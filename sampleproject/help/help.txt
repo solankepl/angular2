@@ -1,0 +1,170 @@
+“TypeScript is a sugar coated Object oriented programming language over JavaScript.”
+
+http://www.concretepage.com/angular-2/getting-started-with-angular-2-using-typescript-step-by-step-example
+
+package.json
+
+{
+  "name": "angular-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "tsc -w"
+  },
+  "dependencies": {
+    "@angular/common": "~2.3.0",
+    "@angular/compiler": "~2.3.0",
+    "@angular/core": "~2.3.0",
+    "@angular/forms": "~2.3.0",
+    "@angular/http": "~2.3.0",
+    "@angular/platform-browser": "~2.3.0",
+    "@angular/platform-browser-dynamic": "~2.3.0",
+    "@angular/router": "~3.3.0",
+
+    "angular-in-memory-web-api": "~0.2.1",
+    "systemjs": "0.19.40",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-rc.4",
+    "zone.js": "^0.7.2"
+  },
+  "devDependencies": {
+    "typescript": "~2.0.10"
+  }
+} 
+
+================================
+Create tsconfig.json
+tsconfig.json is a JSON file that is used to define how the TypeScript compiler compiles TypeScript code of project file to JavaScript code .
+
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [ "es2015", "dom" ]
+  }
+}  
+================================
+Create systemjs.config.js
+SystemJS is universal dynamic module loader that loads ES6 modules, AMD, CommonJS and global scripts in the browser and NodeJS.
+
+(function (global) {
+  System.config({
+    paths: {
+      'npm:': 'node_modules/'
+    },
+    map: {
+      myApp: 'app',
+      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      'rxjs': 'npm:rxjs',
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
+    },
+    packages: {
+      myApp: {
+        main: './main.js',
+        defaultExtension: 'js'
+      },
+      rxjs: {
+        defaultExtension: 'js'
+      },
+      'angular-in-memory-web-api': {
+        main: './index.js',
+        defaultExtension: 'js'
+      }
+    }
+  });
+})(this); 
+================================
+Create index html page
+<html>
+  <head>
+    <title>Angular 2 Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('myApp').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+  <body>
+      <pipe-app>Please Wait...</pipe-app>
+  </body>
+</html>
+================================
+create app.component.ts file
+
+import { Component } from '@angular/core';
+@Component({
+  selector: 'msg-app',
+  templateUrl: 'app/app.component.html', 
+  style: `
+        h1{
+            color:#FF00FF;   
+        }    
+    `
+})
+export class AppComponent { 
+   
+}
+
+================================
+Create app.comopnent.html file
+app.component.html 
+<h1>welcome</h1>
+
+================================ Crerate module.ts file =====================
+
+import {NgModule}      from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppComponent}  from './app.component';
+@NgModule({
+  imports:      [BrowserModule],
+  declarations: [AppComponent],
+  bootstrap:    [AppComponent]
+})
+export class AppModule { } 
+
+=============================== Create Main TS File======================
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {AppModule} from './module';
+const platform = platformBrowserDynamic();
+platform.bootstrapModule(AppModule); 
+
+================================= Create index.html file ===========
+<html>
+  <head>
+    <title>Angular 2 Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('myApp').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+  <body>
+      <msg-app>Please Wait...</msg-app>
+  </body>
+</html> 
+
+================================= Create index.html file ===========
+run npm start command 

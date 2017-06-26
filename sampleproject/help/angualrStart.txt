@@ -1,0 +1,187 @@
+https://www.thepolyglotdeveloper.com/2016/01/include-external-javascript-libraries-in-an-angular-2-typescript-project/
+
+Create folder src
+Create another folder js
+
+create file in app folder tsconfig.json, index.html file, app.js, app.html
+
+We use the type script for angular 2
+
+we are use npm 
+
+Npm init -y "created the on package.json" file here
+
+after that we include angular two dependencyes 
+
+
+npm install angular2@2.0.0-beta.0 systemjs typescript live-server --save
+
+Open the package.json and add script compile command
+"tsc": "tsc -p src -w",
+"start": "live-server --open*src"
+
+Go the app forlder and open tsconfig.json file
+it all of compiler option for typesctipt
+
+Wirgt below tsconfig file
+{
+    /*"extends": "../tsconfig.json", */
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "commonjs",
+        "sourceMap": true,
+        "baseUrl": "",
+        "types": []
+    },
+}
+
+Open the index.html file
+add below code in index html file
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Demoproject</title>
+    <base href="./index.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script src="../node_modules/angular2/bundles/angular2-polyfills.js"></script>
+
+    <script src="../node_modules/systemjs/dist/system.src.js"></script>
+    <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.config({
+            packages: {
+                "app" {
+                    defaultExtension: "js"
+                }
+            }
+        });
+        system.import("app/app");
+    </script>
+</head>
+
+<body>
+    <my-app>Loading...</my-app>
+</body>
+
+</html>
+
+Open app.js file 
+add below code 
+
+import {Componet, View} from "angular2/core";
+import {bootstrape} from "angualr2/platform/browser";
+
+    @Component ({
+        selector: "my-app",
+        templatUrl: "app/app.html",
+        directives:[]        
+    })
+    
+class app{
+    constructor(){
+
+    }    
+}
+
+bootstrap(App, []);
+
+
+http://exporter-edward-62476.netlify.com/
+
+https://embed.plnkr.co/EoOdyCFGZZVHAFhYRA18/ //d3 example
+
+
+ng new projectFolder
+
+ng g component [name] generates a component
+
+ng g service [name]
+
+
+ng serve
+
+ng build --env=prod
+
+remove path indext.html baseUrl ="/";
+
+
+Refresh issue ang 2 app
+Change base url from index.html file "./index.html" 
+import file  "import {LocationStrategy, HashLocationStrategy} from '@angular/common';" in app.module ts file
+and add  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }] this ocde in app.module ts file.
+
+
+install jquery ui and external laibrary
+npm install --save "pakage name"
+
+npm install --save jquery-ui (pakage.json will be updated)
+
+Open the angular-cli.json file 
+add path in script option   "scripts": [
+      ".././node_modules/jquery/dist/jquery.min.js",
+      ".././node_modules/jquery/dist/jquery.min.js"      
+      ],
+
+sytemjs.config.js add maping
+'jquery': 'npm:jquery@3.2.1.js',
+
+
+Github basic command 
+http://gitref.org/basic/
+
+git init
+
+git status -s
+
+git diff --cached
+
+git stash //locally save
+
+git stash list
+
+git stash apply
+
+git stash drop stash@{1}
+
+git stash clear
+
+git add "filename"
+
+git commit -am 'changes to hello file'
+
+git reset --soft HEAD~
+
+git branch "branch_name"
+
+git branch
+
+git branch checkout "baranche-name"
+
+git checkout --track origin/"barnach name"
+
+$ git push origin --delete "baranche-name"
+
+$ git branch -d "baranche-name"
+
+git merge "branch_name"
+
+git push origin "branch_name"
+
+git remote add origin https://github.com/VijayNew/NewExample.git
+
+git remote -v
+
+
+
+
+
+
+
+
